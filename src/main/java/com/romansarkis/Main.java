@@ -6,7 +6,7 @@ import java.util.List;
 import javax.swing.*;
 
 public class Main {
-    public static String VERSION = "v0.3";
+    public static String VERSION = "v0.4";
     private static boolean isFullscreen = false;
     private static JFrame frame;
 
