@@ -13,13 +13,13 @@
         },
         {
             "name": "Rav",
-            "clss": "Hunter",
+            "clss": "Rogue",
             "level": 58,
             "maxHealth": 600,
             "currentHealth": 600,
             "maxResource": 100,
             "currentResource": 60,
-            "type": "mana",
+            "type": "stamina",
             "portrait": "rav.png"
         },
         {

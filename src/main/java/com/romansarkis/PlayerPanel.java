@@ -25,9 +25,9 @@ public class PlayerPanel extends JPanel {
 
         // Determine resource bar color
         switch (resourceType.toLowerCase()) {
-            case "mana": resourceColor = Color.BLUE; break;
-            case "rage": resourceColor = Color.RED; break;
-            case "stamina": resourceColor = Color.YELLOW; break;
+            case "mana": resourceColor = new Color(1,3,168); break;
+            case "rage": resourceColor = new Color(168,2,6); break;
+            case "stamina": resourceColor = new Color(202,201,0); break;
             default: resourceColor = Color.GRAY;
         }
 
@@ -50,9 +50,6 @@ protected void paintComponent(Graphics g) {
 
     int bgWidth = panelWidth;
     int bgHeight = (int) (background.getHeight() * ((double) panelWidth / background.getWidth()));
-
-    Font wowFont = FontLoader.loadWoWFont(panelWidth / 15);
-    g2.setFont(wowFont);
 
     // Ensure background fits within panel
     if (bgHeight > panelHeight) {
@@ -97,25 +94,38 @@ protected void paintComponent(Graphics g) {
     int resourceBarY = healthBarY + healthBarHeight + (int) (bgHeight * 0.03);
 
     // Draw health bar
-    g2.setColor(Color.GREEN);
+    g2.setColor(new Color(8,165,2));
     g2.fillRect(barX, healthBarY, healthBarFilled, healthBarHeight);
 
     // Draw resource bar
     g2.setColor(resourceColor);
     g2.fillRect(barX, resourceBarY, resourceBarFilled, resourceBarHeight);
 
+    g2.setColor(new Color(0, 0, 0, 150));
+    g2.fillRect((int)(barX), (int)(bgY + bgHeight / 10), (int)(bgWidth/1.75), (int)(bgHeight / 5));
+
     // Draw the background
     g2.drawImage(background, bgX, bgY, bgWidth, bgHeight, this);
 
     // Draw player name
+    Font wowFont = FontLoader.loadWoWFont(bgWidth / 15);
+    g2.setFont(wowFont);
+
     FontMetrics fm = g2.getFontMetrics();
     int textWidth = fm.stringWidth(playerName);
 
-    g2.setColor(Color.WHITE);
+    g2.setColor(Color.BLACK);
+    g2.drawString(playerName, bgX + (int)(bgWidth / 1.56) - textWidth / 2, bgY + bgHeight / 4);
+    g2.drawString(playerName, bgX + (int)(bgWidth / 1.585) - textWidth / 2, bgY + bgHeight / 4);
+    g2.drawString(playerName, bgX + (int)(bgWidth / 1.575) - textWidth / 2, bgY + (int) (bgHeight / 4.1));
+    g2.drawString(playerName, bgX + (int)(bgWidth / 1.575) - textWidth / 2, bgY + (int) (bgHeight / 3.9));
+
+
+
+    g2.setColor(new Color(226,201,102));
     g2.drawString(playerName, bgX + (int)(bgWidth / 1.575) - textWidth / 2, bgY + bgHeight / 4);
 
     // Draw level
-    g2.setColor(Color.YELLOW);
     g2.drawString(String.valueOf(level), bgX + (int) (bgWidth * 0.07), bgY + (int) (bgHeight * 0.15));
 }
 
