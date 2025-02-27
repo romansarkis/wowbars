@@ -2,9 +2,10 @@
     "players": [
         {
             "name": "Alcorsx",
+            "clss": "Warrior",
             "level": 60,
             "maxHealth": 500,
-            "currentHealth": 400,
+            "currentHealth": 500,
             "maxResource": 200,
             "currentResource": 150,
             "type": "rage",
@@ -12,13 +13,36 @@
         },
         {
             "name": "Rav",
+            "clss": "Hunter",
             "level": 58,
             "maxHealth": 600,
-            "currentHealth": 500,
+            "currentHealth": 600,
             "maxResource": 100,
             "currentResource": 60,
             "type": "mana",
             "portrait": "rav.png"
+        },
+        {
+            "name": "Gul'Dan",
+            "clss": "Warlock",
+            "level": 60,
+            "maxHealth": 600,
+            "currentHealth": 600,
+            "maxResource": 100,
+            "currentResource": 100,
+            "type": "mana",
+            "portrait": "guldan.png"
+        },
+        {
+            "name": "xXx_Rhicky_xXx",
+            "clss": "Warrior",
+            "level": 33,
+            "maxHealth": 1700,
+            "currentHealth": 1700,
+            "maxResource": 100,
+            "currentResource": 100,
+            "type": "rage",
+            "portrait": "rhicky.png"
         }
     ]
 }
