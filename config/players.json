@@ -1,0 +1,6 @@
+{
+    "players": [
+        {"name": "Thrall", "health": 100, "resource": 100, "type": "mana"},
+        {"name": "Garrosh", "health": 120, "resource": 80, "type": "rage"}
+    ]
+}
