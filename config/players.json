@@ -1,6 +1,24 @@
 {
     "players": [
-        {"name": "Thrall", "health": 100, "resource": 100, "type": "mana"},
-        {"name": "Garrosh", "health": 120, "resource": 80, "type": "rage"}
+        {
+            "name": "Alcorsx",
+            "level": 60,
+            "maxHealth": 500,
+            "currentHealth": 400,
+            "maxResource": 200,
+            "currentResource": 150,
+            "type": "rage",
+            "portrait": "alcorsx.png"
+        },
+        {
+            "name": "Rav",
+            "level": 58,
+            "maxHealth": 600,
+            "currentHealth": 500,
+            "maxResource": 100,
+            "currentResource": 60,
+            "type": "mana",
+            "portrait": "rav.png"
+        }
     ]
 }
