@@ -62,7 +62,7 @@ protected void paintComponent(Graphics g) {
 
     // Scale and position portrait relative to background
     if (portrait != null) {
-        double portraitScale = 0.55; // Adjust this to fit within the background frame
+        double portraitScale = 0.575; // Adjust this to fit within the background frame
         int portraitWidth = (int) (bgWidth * portraitScale);
         int portraitHeight = (int) (bgHeight * portraitScale);
 
@@ -75,23 +75,23 @@ protected void paintComponent(Graphics g) {
         }
 
         // Position portrait inside the background
-        int portraitX = bgX + (int) (bgWidth * 0.065);  // Adjust X to fit within the left circle
-        int portraitY = bgY + (int) (bgHeight * 0.1); // Adjust Y to center inside the circle
+        int portraitX = bgX + (int) (bgWidth * 0.061);  // Adjust X to fit within the left circle
+        int portraitY = bgY + (int) (bgHeight * 0.11); // Adjust Y to center inside the circle
 
         g2.drawImage(portrait, portraitX, portraitY, portraitWidth, portraitHeight, this);
     }
 
     // Health & Resource Bars (scaled to panel)
-    int barWidth = (int) (bgWidth * 0.55);
+    int barWidth = (int) (bgWidth * 0.6);
     int healthBarHeight = (int) (bgHeight * 0.09);
     int resourceBarHeight = healthBarHeight;
 
     int healthBarFilled = (int) ((currentHealth / (double) maxHealth) * barWidth);
     int resourceBarFilled = (int) ((currentResource / (double) maxResource) * barWidth);
 
-    int barX = bgX + (int) ((bgWidth - barWidth) / 1.25);
-    int healthBarY = bgY + (int) (bgHeight * 0.35);
-    int resourceBarY = healthBarY + healthBarHeight + (int) (bgHeight * 0.03);
+    int barX = bgX + (int) ((bgWidth - barWidth) / 1.1);
+    int healthBarY = bgY + (int) (bgHeight * 0.375);
+    int resourceBarY = healthBarY + healthBarHeight + (int) (bgHeight * 0.0275);
 
     // Draw health bar
     g2.setColor(new Color(8,165,2));
@@ -102,7 +102,7 @@ protected void paintComponent(Graphics g) {
     g2.fillRect(barX, resourceBarY, resourceBarFilled, resourceBarHeight);
 
     g2.setColor(new Color(0, 0, 0, 150));
-    g2.fillRect((int)(barX), (int)(bgY + bgHeight / 10), (int)(bgWidth/1.75), (int)(bgHeight / 5));
+    g2.fillRect((int)(barX), (int)(bgY + bgHeight / 6), (int) (bgWidth / 1.69), (int) (bgHeight / 5));
 
     // Draw the background
     g2.drawImage(background, bgX, bgY, bgWidth, bgHeight, this);
@@ -115,18 +115,25 @@ protected void paintComponent(Graphics g) {
     int textWidth = fm.stringWidth(playerName);
 
     g2.setColor(Color.BLACK);
-    g2.drawString(playerName, bgX + (int)(bgWidth / 1.56) - textWidth / 2, bgY + bgHeight / 4);
-    g2.drawString(playerName, bgX + (int)(bgWidth / 1.585) - textWidth / 2, bgY + bgHeight / 4);
-    g2.drawString(playerName, bgX + (int)(bgWidth / 1.575) - textWidth / 2, bgY + (int) (bgHeight / 4.1));
-    g2.drawString(playerName, bgX + (int)(bgWidth / 1.575) - textWidth / 2, bgY + (int) (bgHeight / 3.9));
+    g2.drawString(playerName, bgX + (int)(bgWidth / 1.485) - textWidth / 2, bgY +(int)(bgHeight / 3.15));
+    g2.drawString(playerName, bgX + (int)(bgWidth / 1.515) - textWidth / 2, bgY + (int)(bgHeight / 3.15));
+    g2.drawString(playerName, bgX + (int)(bgWidth / 1.505) - textWidth / 2, bgY + (int) (bgHeight / 3.25));
+    g2.drawString(playerName, bgX + (int)(bgWidth / 1.505) - textWidth / 2, bgY + (int) (bgHeight / 3.05));
 
 
 
     g2.setColor(new Color(226,201,102));
-    g2.drawString(playerName, bgX + (int)(bgWidth / 1.575) - textWidth / 2, bgY + bgHeight / 4);
+    g2.drawString(playerName, bgX + (int)(bgWidth / 1.5) - textWidth / 2, bgY + (int)(bgHeight / 3.15));
 
     // Draw level
-    g2.drawString(String.valueOf(level), bgX + (int) (bgWidth * 0.07), bgY + (int) (bgHeight * 0.15));
+    textWidth = fm.stringWidth(String.valueOf(level));
+    g2.setColor(Color.BLACK);
+    g2.drawString(String.valueOf(level), bgX + (int) (bgWidth * 0.09)  - textWidth / 2, bgY + (int) (bgHeight * 0.64));
+    g2.drawString(String.valueOf(level), bgX + (int) (bgWidth * 0.1)  - textWidth / 2, bgY + (int) (bgHeight * 0.64));
+    g2.drawString(String.valueOf(level), bgX + (int) (bgWidth * 0.095)  - textWidth / 2, bgY + (int) (bgHeight * 0.635));
+    g2.drawString(String.valueOf(level), bgX + (int) (bgWidth * 0.095)  - textWidth / 2, bgY + (int) (bgHeight * 0.645));
+    g2.setColor(new Color(226,201,102));
+    g2.drawString(String.valueOf(level), bgX + (int) (bgWidth * 0.095)  - textWidth / 2, bgY + (int) (bgHeight * 0.64));
 }
 
 

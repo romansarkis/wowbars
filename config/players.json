@@ -1,48 +1,48 @@
 {
     "players": [
         {
-            "name": "Alcorsx",
+            "name": "Rhicky",
             "clss": "Warrior",
-            "level": 60,
-            "maxHealth": 500,
-            "currentHealth": 500,
+            "level": 33,
+            "maxHealth": 1738,
+            "currentHealth": 1738,
             "maxResource": 200,
             "currentResource": 150,
             "type": "rage",
-            "portrait": "alcorsx.png"
+            "portrait": "rhicky.png"
         },
         {
-            "name": "Rav",
-            "clss": "Rogue",
-            "level": 58,
-            "maxHealth": 600,
-            "currentHealth": 600,
+            "name": "Umontar",
+            "clss": "Warrior",
+            "level": 27,
+            "maxHealth": 1253,
+            "currentHealth": 1253,
             "maxResource": 100,
             "currentResource": 60,
-            "type": "stamina",
-            "portrait": "rav.png"
+            "type": "rage",
+            "portrait": "umontar.png"
         },
         {
-            "name": "Gul'Dan",
-            "clss": "Warlock",
-            "level": 60,
-            "maxHealth": 600,
-            "currentHealth": 600,
+            "name": "Corvy",
+            "clss": "Hunter",
+            "level": 11,
+            "maxHealth": 273,
+            "currentHealth": 273,
             "maxResource": 100,
             "currentResource": 100,
             "type": "mana",
-            "portrait": "guldan.png"
+            "portrait": "corvy.png"
         },
         {
-            "name": "xXx_Rhicky_xXx",
-            "clss": "Warrior",
-            "level": 33,
-            "maxHealth": 1700,
-            "currentHealth": 1700,
+            "name": "Jackdog",
+            "clss": "Priest",
+            "level": 10,
+            "maxHealth": 172,
+            "currentHealth": 172,
             "maxResource": 100,
             "currentResource": 100,
-            "type": "rage",
-            "portrait": "rhicky.png"
+            "type": "mana",
+            "portrait": "jackdog.png"
         }
     ]
 }
