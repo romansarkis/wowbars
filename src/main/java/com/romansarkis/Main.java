@@ -6,29 +6,33 @@ import java.util.List;
 import javax.swing.*;
 
 public class Main {
-    public static String VERSION = "v0.4";
-    private static boolean isFullscreen = false;
-    private static JFrame frame;
+    public static String VERSION = "v0.5";
+    private boolean isFullscreen = false;
+    private JFrame frame;
+    private List<PlayerPanel> players;
 
     public static void main(String[] args) {
-        // Create the main frame
+        Main mainWindow = new Main();
+        mainWindow.start();
+    }
+
+    public void start() {
         frame = new JFrame("WoW Bars " + VERSION);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         ImageIcon icon = new ImageIcon("assets/icon.png");
         frame.setIconImage(icon.getImage());
 
-        frame.setMinimumSize(new Dimension(1928, 1080)); 
+        frame.setMinimumSize(new Dimension(1920, 1080)); 
         frame.setLayout(new GridLayout(0, 2)); 
         frame.getContentPane().setBackground(Color.gray);
 
-        List<PlayerPanel> players = PlayerLoader.loadPlayers();
+        players = PlayerLoader.loadPlayers();
         for (PlayerPanel player : players) {
             player.setOpaque(false);
             frame.add(player);
         }
 
-        // Add Key Listener for Fullscreen Toggle
         frame.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
@@ -40,16 +44,18 @@ public class Main {
             }
         });
 
+         // Automatically open the controller window
+        SwingUtilities.invokeLater(() -> new ControllerWindow(this));
+
         frame.setFocusable(true);
         frame.requestFocusInWindow();
-
         frame.setVisible(true);
     }
 
-    private static void toggleFullscreen() {
+    private void toggleFullscreen() {
         isFullscreen = !isFullscreen;
 
-        frame.dispose(); // Dispose before changing settings
+        frame.dispose();
 
         if (isFullscreen) {
             frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -57,10 +63,21 @@ public class Main {
         } else {
             frame.setExtendedState(JFrame.NORMAL);
             frame.setUndecorated(false); // Restore title bar
-            frame.setSize(800, 600); // Set a default size when exiting fullscreen
-            frame.setLocationRelativeTo(null); // Center the window
+            frame.setSize(800, 600);
+            frame.setLocationRelativeTo(null);
         }
 
-        frame.setVisible(true); // Re-show the frame
+        frame.setVisible(true);
+    }
+
+    public List<PlayerPanel> getPlayers() {
+        return players;
+    }
+
+    public void reloadPlayers() {
+        players = PlayerLoader.loadPlayers();
+        for (PlayerPanel player : players) {
+            player.repaint();
+        }
     }
 }

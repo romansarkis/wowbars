@@ -189,6 +189,18 @@ protected void paintComponent(Graphics g) {
         repaint();
     }
 
+    public String getPlayerName() {
+        return this.playerName;
+    }
+
+    public int getCurrentHealth() {
+        return this.currentHealth;
+    }
+
+    public int getCurrentResource() {
+        return this.currentResource;
+    }
+    
     @Override
     public Dimension getPreferredSize() {
         return new Dimension(600, 150);
