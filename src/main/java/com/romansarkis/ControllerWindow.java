@@ -88,9 +88,6 @@ public class ControllerWindow extends JFrame {
             e.printStackTrace();
         }
     }
-    
-    
-
     private void updateMainWindow() {
         mainInstance.reloadPlayers(); // Reload players from updated JSON
     }
