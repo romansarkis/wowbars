@@ -3,7 +3,7 @@
         {
             "name": "Rhicky",
             "clss": "Warrior",
-            "level": 33,
+            "level": 3,
             "maxHealth": 1738,
             "currentHealth": 1738,
             "maxResource": 200,
@@ -14,7 +14,7 @@
         {
             "name": "Umontar",
             "clss": "Warrior",
-            "level": 27,
+            "level": 2,
             "maxHealth": 1253,
             "currentHealth": 1253,
             "maxResource": 100,
@@ -25,7 +25,7 @@
         {
             "name": "Corvy",
             "clss": "Hunter",
-            "level": 11,
+            "level": 1,
             "maxHealth": 273,
             "currentHealth": 273,
             "maxResource": 100,
@@ -36,7 +36,7 @@
         {
             "name": "Jackdog",
             "clss": "Priest",
-            "level": 10,
+            "level": 2,
             "maxHealth": 172,
             "currentHealth": 172,
             "maxResource": 100,

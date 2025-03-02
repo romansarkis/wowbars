@@ -13,4 +13,14 @@ public class FontLoader {
             return new Font("Serif", Font.BOLD, (int) size); // Fallback font
         }
     }
+
+    public static Font loadStatisticsFont(float size) {
+        try {
+            Font customFont = Font.createFont(Font.TRUETYPE_FONT, new File("assets/MORPHEUS.TTF"));
+            return customFont.deriveFont(size);
+        } catch (Exception e) {
+            System.err.println("Error loading Statistics font: " + e.getMessage());
+            return new Font("Serif", Font.BOLD, (int) size); // Fallback font
+        }
+    }
 }

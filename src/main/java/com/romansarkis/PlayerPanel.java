@@ -115,25 +115,71 @@ protected void paintComponent(Graphics g) {
     int textWidth = fm.stringWidth(playerName);
 
     g2.setColor(Color.BLACK);
-    g2.drawString(playerName, bgX + (int)(bgWidth / 1.485) - textWidth / 2, bgY +(int)(bgHeight / 3.15));
-    g2.drawString(playerName, bgX + (int)(bgWidth / 1.515) - textWidth / 2, bgY + (int)(bgHeight / 3.15));
-    g2.drawString(playerName, bgX + (int)(bgWidth / 1.505) - textWidth / 2, bgY + (int) (bgHeight / 3.25));
-    g2.drawString(playerName, bgX + (int)(bgWidth / 1.505) - textWidth / 2, bgY + (int) (bgHeight / 3.05));
+    g2.drawString(playerName, bgX + (int)(bgWidth / 1.49) - textWidth / 2, bgY +(int)(bgHeight * .31));
+    g2.drawString(playerName, bgX + (int)(bgWidth / 1.51) - textWidth / 2, bgY + (int)(bgHeight * .31));
+    g2.drawString(playerName, bgX + (int)(bgWidth / 1.5) - textWidth / 2, bgY + (int) (bgHeight * .305));
+    g2.drawString(playerName, bgX + (int)(bgWidth / 1.5) - textWidth / 2, bgY + (int) (bgHeight * .315));
 
+    g2.drawString(playerName, bgX + (int)(bgWidth / 1.49) - textWidth / 2, bgY +(int)(bgHeight * .305));
+    g2.drawString(playerName, bgX + (int)(bgWidth / 1.49) - textWidth / 2, bgY +(int)(bgHeight * .305));
+    g2.drawString(playerName, bgX + (int)(bgWidth / 1.51) - textWidth / 2, bgY + (int)(bgHeight * .315));
+    g2.drawString(playerName, bgX + (int)(bgWidth / 1.51) - textWidth / 2, bgY + (int)(bgHeight * .315));
 
-
-    g2.setColor(new Color(226,201,102));
-    g2.drawString(playerName, bgX + (int)(bgWidth / 1.5) - textWidth / 2, bgY + (int)(bgHeight / 3.15));
+    g2.setColor(new Color(214,178,0));
+    g2.drawString(playerName, bgX + (int)(bgWidth / 1.5) - textWidth / 2, bgY + (int)(bgHeight * 0.31));
 
     // Draw level
     textWidth = fm.stringWidth(String.valueOf(level));
     g2.setColor(Color.BLACK);
+
     g2.drawString(String.valueOf(level), bgX + (int) (bgWidth * 0.09)  - textWidth / 2, bgY + (int) (bgHeight * 0.64));
     g2.drawString(String.valueOf(level), bgX + (int) (bgWidth * 0.1)  - textWidth / 2, bgY + (int) (bgHeight * 0.64));
     g2.drawString(String.valueOf(level), bgX + (int) (bgWidth * 0.095)  - textWidth / 2, bgY + (int) (bgHeight * 0.635));
     g2.drawString(String.valueOf(level), bgX + (int) (bgWidth * 0.095)  - textWidth / 2, bgY + (int) (bgHeight * 0.645));
-    g2.setColor(new Color(226,201,102));
+
+    g2.drawString(String.valueOf(level), bgX + (int) (bgWidth * 0.09)  - textWidth / 2, bgY + (int) (bgHeight * 0.645));
+    g2.drawString(String.valueOf(level), bgX + (int) (bgWidth * 0.09)  - textWidth / 2, bgY + (int) (bgHeight * 0.635));
+    g2.drawString(String.valueOf(level), bgX + (int) (bgWidth * 0.1)  - textWidth / 2, bgY + (int) (bgHeight * 0.645));
+    g2.drawString(String.valueOf(level), bgX + (int) (bgWidth * 0.1)  - textWidth / 2, bgY + (int) (bgHeight * 0.635));
+
+    g2.setColor(new Color(214,178,0,255));
     g2.drawString(String.valueOf(level), bgX + (int) (bgWidth * 0.095)  - textWidth / 2, bgY + (int) (bgHeight * 0.64));
+
+    // Draw Health and resource statistics
+    wowFont = FontLoader.loadStatisticsFont(bgWidth/16);
+    g2.setFont(wowFont);
+
+    fm = g2.getFontMetrics();
+    int healthStatWidth = fm.stringWidth(currentHealth + "/" + maxHealth);
+    int resourceStatWidth = fm.stringWidth(currentResource + "/" + maxResource);
+
+    g2.setColor(Color.BLACK);
+    g2.drawString(currentHealth + "/" + maxHealth, (int)(bgWidth / 1.505) - healthStatWidth / 2, bgY + (int)(bgHeight * 0.46));
+    g2.drawString(currentHealth + "/" + maxHealth, (int)(bgWidth / 1.495) - healthStatWidth / 2, bgY + (int)(bgHeight * 0.46));
+    g2.drawString(currentHealth + "/" + maxHealth, (int)(bgWidth / 1.5) - healthStatWidth / 2, bgY + (int)(bgHeight * 0.465));
+    g2.drawString(currentHealth + "/" + maxHealth, (int)(bgWidth / 1.5) - healthStatWidth / 2, bgY + (int)(bgHeight * 0.455));
+
+    g2.drawString(currentHealth + "/" + maxHealth, (int)(bgWidth / 1.495) - healthStatWidth / 2, bgY + (int)(bgHeight * 0.455));
+    g2.drawString(currentHealth + "/" + maxHealth, (int)(bgWidth / 1.495) - healthStatWidth / 2, bgY + (int)(bgHeight * 0.465));
+    g2.drawString(currentHealth + "/" + maxHealth, (int)(bgWidth / 1.505) - healthStatWidth / 2, bgY + (int)(bgHeight * 0.455));
+    g2.drawString(currentHealth + "/" + maxHealth, (int)(bgWidth / 1.505) - healthStatWidth / 2, bgY + (int)(bgHeight * 0.465));
+
+    g2.drawString(currentResource + "/" + maxResource, (int)(bgWidth / 1.505) - resourceStatWidth / 2, bgY + (int)(bgHeight * 0.573));
+    g2.drawString(currentResource + "/" + maxResource, (int)(bgWidth / 1.495) - resourceStatWidth / 2, bgY + (int)(bgHeight * 0.573));
+    g2.drawString(currentResource + "/" + maxResource, (int)(bgWidth / 1.5) - resourceStatWidth / 2, bgY + (int)(bgHeight * 0.578));
+    g2.drawString(currentResource + "/" + maxResource, (int)(bgWidth / 1.5) - resourceStatWidth / 2, bgY + (int)(bgHeight * 0.568));
+
+    g2.drawString(currentResource + "/" + maxResource, (int)(bgWidth / 1.495) - resourceStatWidth / 2, bgY + (int)(bgHeight * 0.568));
+    g2.drawString(currentResource + "/" + maxResource, (int)(bgWidth / 1.495) - resourceStatWidth / 2, bgY + (int)(bgHeight * 0.578));
+    g2.drawString(currentResource + "/" + maxResource, (int)(bgWidth / 1.505) - resourceStatWidth / 2, bgY + (int)(bgHeight * 0.568));
+    g2.drawString(currentResource + "/" + maxResource, (int)(bgWidth / 1.505) - resourceStatWidth / 2, bgY + (int)(bgHeight * 0.578));
+
+    g2.setColor(Color.WHITE);
+    g2.drawString(currentHealth + "/" + maxHealth, (int)(bgWidth / 1.5) - healthStatWidth / 2, bgY + (int)(bgHeight * 0.46));
+
+    g2.drawString(currentResource + "/" + maxResource, (int)(bgWidth / 1.5) - resourceStatWidth / 2, bgY + (int)(bgHeight * 0.573));
+
+
 }
 
 

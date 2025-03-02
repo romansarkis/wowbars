@@ -18,7 +18,7 @@ public class Main {
         ImageIcon icon = new ImageIcon("assets/icon.png");
         frame.setIconImage(icon.getImage());
 
-        frame.setMinimumSize(new Dimension(600, 400)); 
+        frame.setMinimumSize(new Dimension(1928, 1080)); 
         frame.setLayout(new GridLayout(0, 2)); 
         frame.getContentPane().setBackground(Color.gray);
 
