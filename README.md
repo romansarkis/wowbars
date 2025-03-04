@@ -33,4 +33,4 @@ World of Warcraft themed status GUI display for Dungeons &amp; Dragons campaign.
         }
 
 
-4. Within the root directory, run `mvn exec:java`
+4. Within the root directory, run `mvn compile`then `mvn exec:java`
