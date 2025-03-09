@@ -6,7 +6,7 @@ import java.io.File;
 public class FontLoader {
     public static Font loadWoWFont(float size) {
         try {
-            Font customFont = Font.createFont(Font.TRUETYPE_FONT, new File("assets/friz_quadrata.ttf"));
+            Font customFont = Font.createFont(Font.TRUETYPE_FONT, new File("assets/fonts/friz_quadrata.ttf"));
             return customFont.deriveFont(size);
         } catch (Exception e) {
             System.err.println("Error loading WoW font: " + e.getMessage());
@@ -16,7 +16,7 @@ public class FontLoader {
 
     public static Font loadStatisticsFont(float size) {
         try {
-            Font customFont = Font.createFont(Font.TRUETYPE_FONT, new File("assets/MORPHEUS.TTF"));
+            Font customFont = Font.createFont(Font.TRUETYPE_FONT, new File("assets/fonts/MORPHEUS.TTF"));
             return customFont.deriveFont(size);
         } catch (Exception e) {
             System.err.println("Error loading Statistics font: " + e.getMessage());

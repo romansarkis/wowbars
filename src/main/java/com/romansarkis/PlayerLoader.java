@@ -20,7 +20,7 @@ public class PlayerLoader {
                 int maxResource = node.get("maxResource").asInt();
                 int currentResource = node.get("currentResource").asInt();
                 String resourceType = node.get("type").asText();
-                String portraitPath = "assets/" + node.get("portrait").asText();
+                String portraitPath = "assets/portraits/" + node.get("portrait").asText();
 
                 // Parse player buff list
                 List<String> buffs = new ArrayList();
