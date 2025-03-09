@@ -22,7 +22,16 @@ public class PlayerLoader {
                 String resourceType = node.get("type").asText();
                 String portraitPath = "assets/" + node.get("portrait").asText();
 
-                players.add(new PlayerPanel(name, level, maxHealth, currentHealth, maxResource, currentResource, resourceType, portraitPath));
+                // Parse player buff list
+                List<String> buffs = new ArrayList();
+                JsonNode buffsNode = node.get("buffs");
+                if (buffsNode != null && buffsNode.isArray()) {
+                    for (JsonNode buff : buffsNode) {
+                        buffs.add(buff.asText());
+                    }
+                }
+
+                players.add(new PlayerPanel(name, level, maxHealth, currentHealth, maxResource, currentResource, resourceType, portraitPath, buffs));
             }
         } catch (Exception e) {
             e.printStackTrace();

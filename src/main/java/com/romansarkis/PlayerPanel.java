@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import javax.imageio.ImageIO;
+import java.util.List;
 
 public class PlayerPanel extends JPanel {
     private BufferedImage background;
@@ -15,13 +16,16 @@ public class PlayerPanel extends JPanel {
     private int maxResource, currentResource;
     private Color resourceColor;
 
-    public PlayerPanel(String playerName, int level, int maxHealth, int currentHealth, int maxResource, int currentResource, String resourceType, String portraitPath) {
+    private List<String> buffs;
+
+    public PlayerPanel(String playerName, int level, int maxHealth, int currentHealth, int maxResource, int currentResource, String resourceType, String portraitPath, List<String> buffs) {
         this.playerName = playerName;
         this.level = level;
         this.maxHealth = maxHealth;
         this.currentHealth = currentHealth;
         this.maxResource = maxResource;
         this.currentResource = currentResource;
+        this.buffs = buffs;
 
         // Determine resource bar color
         switch (resourceType.toLowerCase()) {
