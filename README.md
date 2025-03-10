@@ -21,15 +21,18 @@ World of Warcraft themed status GUI display for Dungeons &amp; Dragons campaign.
         Here is an example entry in players.json, note that the type must be either rage, mana, or stamina:
 
         {
-            "name": "Name",
-            "clss": "Class",
-            "level": 0,
-            "maxHealth": 0,
-            "currentHealth": 0,
-            "maxResource": 0,
-            "currentResource": 0,
-            "type": "rage", 
-            "portrait": "name of character.png"
+        "currentHealth": 6892,
+        "level": 60,
+        "clss": "Warrior",
+        "name": "Alcorsx",
+        "maxHealth": 6892,
+        "currentResource": 100,
+        "buffs": [
+                "battleshout.png"
+        ],
+        "maxResource": 100,
+        "type": "rage",
+        "portrait": "alcorsx.png"
         }
 
 
