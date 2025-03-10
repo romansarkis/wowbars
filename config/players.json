@@ -1,1 +1,74 @@
-{"players":[{"currentHealth":12,"level":1,"clss":"Warrior","name":"Rhicky","maxHealth":12,"currentResource":100,"maxResource":100,"type":"rage","portrait":"rhicky.png"},{"currentHealth":12,"level":1,"clss":"Warrior","name":"Umontar","maxHealth":12,"currentResource":0,"maxResource":100,"type":"rage","portrait":"umontar.png"},{"currentHealth":11,"level":1,"clss":"Hunter","name":"Corvy","maxHealth":11,"currentResource":100,"maxResource":100,"type":"mana","portrait":"corvy.png"},{"currentHealth":8,"level":2,"clss":"Priest","name":"Jackdog","maxHealth":8,"currentResource":100,"maxResource":100,"type":"mana","portrait":"jackdog.png"}]}
+{
+  "players": [
+    {
+      "currentHealth": 12,
+      "level": 1,
+      "clss": "Warrior",
+      "name": "Rhicky",
+      "maxHealth": 12,
+      "currentResource": 100,
+      "buffs": [
+        "battleshout.png"
+      ],
+      "maxResource": 100,
+      "type": "rage",
+      "portrait": "rhicky.png"
+    },
+    {
+      "currentHealth": 12,
+      "level": 1,
+      "clss": "Warrior",
+      "name": "Umontar",
+      "maxHealth": 12,
+      "currentResource": 0,
+      "buffs": [
+        "battleshout.png"
+      ],
+      "maxResource": 100,
+      "type": "rage",
+      "portrait": "umontar.png"
+    },
+    {
+      "currentHealth": 11,
+      "level": 1,
+      "clss": "Hunter",
+      "name": "Corvy",
+      "maxHealth": 11,
+      "currentResource": 100,
+      "buffs": [
+        "battleshout.png"
+      ],
+      "maxResource": 100,
+      "type": "mana",
+      "portrait": "corvy.png"
+    },
+    {
+      "currentHealth": 8,
+      "level": 2,
+      "clss": "Priest",
+      "name": "Jackdog",
+      "maxHealth": 8,
+      "currentResource": 100,
+      "buffs": [
+        "battleshout.png"
+      ],
+      "maxResource": 100,
+      "type": "mana",
+      "portrait": "jackdog.png"
+    },
+    {
+      "currentHealth": 6892,
+      "level": 60,
+      "clss": "Warrior",
+      "name": "Alcorsx",
+      "maxHealth": 6892,
+      "currentResource": 100,
+      "buffs": [
+        "battleshout.png"
+      ],
+      "maxResource": 100,
+      "type": "rage",
+      "portrait": "alcorsx.png"
+    }
+  ]
+}

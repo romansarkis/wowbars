@@ -10,11 +10,13 @@ import java.util.List;
 public class PlayerPanel extends JPanel {
     private BufferedImage background;
     private BufferedImage portrait;
+    private BufferedImage tempBuff;
     private String playerName;
     private int level;
     private int maxHealth, currentHealth;
     private int maxResource, currentResource;
     private Color resourceColor;
+    int buffsPerRow = 5;  // Max number of buffs per row
 
     private List<String> buffs;
 
@@ -111,6 +113,39 @@ protected void paintComponent(Graphics g) {
     // Draw the background
     g2.drawImage(background, bgX, bgY, bgWidth, bgHeight, this);
 
+    // Draw all buffs
+    double buffScale = 0.17; // Scale relative to background
+    int buffWidth = (int) (bgWidth * buffScale);
+    int buffHeight = (int) (bgHeight * buffScale);
+
+    // Keep aspect ratio
+    double aspectRatio = (double) portrait.getWidth() / portrait.getHeight();
+    if (buffWidth > buffHeight * aspectRatio) {
+        buffWidth = (int) (buffHeight * aspectRatio);
+    } else {
+        buffHeight = (int) (buffWidth / aspectRatio);
+    }
+
+    for (int i = 0; i < buffs.size(); i++) {
+        try {
+            // Load buff image
+            tempBuff = ImageIO.read(new File("assets/buffs/" + buffs.get(i)));
+    
+            // Calculate row and column position
+            int col = i % buffsPerRow;  // Buff position in the row (0-4)
+            int row = i / buffsPerRow;  // Buff row index (0,1,2...)
+    
+            // Calculate X and Y positions
+            int buffX = bgX + (int) (bgWidth * 0.42) + (int) (col * (buffWidth * 1.2)); // Adjust X to space out buffs
+            int buffY = bgY + (int) (bgHeight * 0.63) + (int) (row * (buffHeight * 1.2)); // Adjust Y for multiple rows
+    
+            // Draw buff icon
+            g2.drawImage(tempBuff, buffX, buffY, buffWidth, buffHeight, this);
+        } catch (Exception e) {
+            System.err.println("Error loading buff: " + e.getMessage());
+        }
+    }
+
     // Draw player name
     Font wowFont = FontLoader.loadWoWFont(bgWidth / 15);
     g2.setFont(wowFont);
@@ -158,38 +193,46 @@ protected void paintComponent(Graphics g) {
     int resourceStatWidth = fm.stringWidth(currentResource + "/" + maxResource);
 
     g2.setColor(Color.BLACK);
-    g2.drawString(currentHealth + "/" + maxHealth, (int)(bgWidth / 1.505) - healthStatWidth / 2, bgY + (int)(bgHeight * 0.46));
-    g2.drawString(currentHealth + "/" + maxHealth, (int)(bgWidth / 1.495) - healthStatWidth / 2, bgY + (int)(bgHeight * 0.46));
-    g2.drawString(currentHealth + "/" + maxHealth, (int)(bgWidth / 1.5) - healthStatWidth / 2, bgY + (int)(bgHeight * 0.465));
-    g2.drawString(currentHealth + "/" + maxHealth, (int)(bgWidth / 1.5) - healthStatWidth / 2, bgY + (int)(bgHeight * 0.455));
+    g2.drawString(currentHealth + "/" + maxHealth, bgX + (int)(bgWidth / 1.505) - healthStatWidth / 2, bgY + (int)(bgHeight * 0.46));
+    g2.drawString(currentHealth + "/" + maxHealth, bgX + (int)(bgWidth / 1.495) - healthStatWidth / 2, bgY + (int)(bgHeight * 0.46));
+    g2.drawString(currentHealth + "/" + maxHealth, bgX + (int)(bgWidth / 1.5) - healthStatWidth / 2, bgY + (int)(bgHeight * 0.465));
+    g2.drawString(currentHealth + "/" + maxHealth, bgX + (int)(bgWidth / 1.5) - healthStatWidth / 2, bgY + (int)(bgHeight * 0.455));
 
-    g2.drawString(currentHealth + "/" + maxHealth, (int)(bgWidth / 1.495) - healthStatWidth / 2, bgY + (int)(bgHeight * 0.455));
-    g2.drawString(currentHealth + "/" + maxHealth, (int)(bgWidth / 1.495) - healthStatWidth / 2, bgY + (int)(bgHeight * 0.465));
-    g2.drawString(currentHealth + "/" + maxHealth, (int)(bgWidth / 1.505) - healthStatWidth / 2, bgY + (int)(bgHeight * 0.455));
-    g2.drawString(currentHealth + "/" + maxHealth, (int)(bgWidth / 1.505) - healthStatWidth / 2, bgY + (int)(bgHeight * 0.465));
+    g2.drawString(currentHealth + "/" + maxHealth, bgX + (int)(bgWidth / 1.495) - healthStatWidth / 2, bgY + (int)(bgHeight * 0.455));
+    g2.drawString(currentHealth + "/" + maxHealth, bgX + (int)(bgWidth / 1.495) - healthStatWidth / 2, bgY + (int)(bgHeight * 0.465));
+    g2.drawString(currentHealth + "/" + maxHealth, bgX + (int)(bgWidth / 1.505) - healthStatWidth / 2, bgY + (int)(bgHeight * 0.455));
+    g2.drawString(currentHealth + "/" + maxHealth, bgX + (int)(bgWidth / 1.505) - healthStatWidth / 2, bgY + (int)(bgHeight * 0.465));
 
-    g2.drawString(currentResource + "/" + maxResource, (int)(bgWidth / 1.505) - resourceStatWidth / 2, bgY + (int)(bgHeight * 0.573));
-    g2.drawString(currentResource + "/" + maxResource, (int)(bgWidth / 1.495) - resourceStatWidth / 2, bgY + (int)(bgHeight * 0.573));
-    g2.drawString(currentResource + "/" + maxResource, (int)(bgWidth / 1.5) - resourceStatWidth / 2, bgY + (int)(bgHeight * 0.578));
-    g2.drawString(currentResource + "/" + maxResource, (int)(bgWidth / 1.5) - resourceStatWidth / 2, bgY + (int)(bgHeight * 0.568));
+    g2.drawString(currentResource + "/" + maxResource, bgX + (int)(bgWidth / 1.505) - resourceStatWidth / 2, bgY + (int)(bgHeight * 0.573));
+    g2.drawString(currentResource + "/" + maxResource, bgX + (int)(bgWidth / 1.495) - resourceStatWidth / 2, bgY + (int)(bgHeight * 0.573));
+    g2.drawString(currentResource + "/" + maxResource, bgX + (int)(bgWidth / 1.5) - resourceStatWidth / 2, bgY + (int)(bgHeight * 0.578));
+    g2.drawString(currentResource + "/" + maxResource, bgX + (int)(bgWidth / 1.5) - resourceStatWidth / 2, bgY + (int)(bgHeight * 0.568));
 
-    g2.drawString(currentResource + "/" + maxResource, (int)(bgWidth / 1.495) - resourceStatWidth / 2, bgY + (int)(bgHeight * 0.568));
-    g2.drawString(currentResource + "/" + maxResource, (int)(bgWidth / 1.495) - resourceStatWidth / 2, bgY + (int)(bgHeight * 0.578));
-    g2.drawString(currentResource + "/" + maxResource, (int)(bgWidth / 1.505) - resourceStatWidth / 2, bgY + (int)(bgHeight * 0.568));
-    g2.drawString(currentResource + "/" + maxResource, (int)(bgWidth / 1.505) - resourceStatWidth / 2, bgY + (int)(bgHeight * 0.578));
+    g2.drawString(currentResource + "/" + maxResource, bgX + (int)(bgWidth / 1.495) - resourceStatWidth / 2, bgY + (int)(bgHeight * 0.568));
+    g2.drawString(currentResource + "/" + maxResource, bgX + (int)(bgWidth / 1.495) - resourceStatWidth / 2, bgY + (int)(bgHeight * 0.578));
+    g2.drawString(currentResource + "/" + maxResource, bgX + (int)(bgWidth / 1.505) - resourceStatWidth / 2, bgY + (int)(bgHeight * 0.568));
+    g2.drawString(currentResource + "/" + maxResource, bgX + (int)(bgWidth / 1.505) - resourceStatWidth / 2, bgY + (int)(bgHeight * 0.578));
 
     g2.setColor(Color.WHITE);
-    g2.drawString(currentHealth + "/" + maxHealth, (int)(bgWidth / 1.5) - healthStatWidth / 2, bgY + (int)(bgHeight * 0.46));
+    g2.drawString(currentHealth + "/" + maxHealth, bgX + (int)(bgWidth / 1.5) - healthStatWidth / 2, bgY + (int)(bgHeight * 0.46));
 
-    g2.drawString(currentResource + "/" + maxResource, (int)(bgWidth / 1.5) - resourceStatWidth / 2, bgY + (int)(bgHeight * 0.573));
-
-
+    g2.drawString(currentResource + "/" + maxResource, bgX + (int)(bgWidth / 1.5) - resourceStatWidth / 2, bgY + (int)(bgHeight * 0.573));
 }
 
 
     public void updateValues(int newHealth, int newResource) {
         this.currentHealth = newHealth;
         this.currentResource = newResource;
+        repaint();
+    }
+
+    public void addBuff(String buff) {
+        this.buffs.add(buff);
+        repaint();
+    }
+
+    public void removeBuff(String buff) {
+        this.buffs.remove(buff);
         repaint();
     }
 
