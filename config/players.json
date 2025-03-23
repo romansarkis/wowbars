@@ -4,21 +4,7 @@
       "currentHealth": 12,
       "level": 1,
       "clss": "Warrior",
-      "name": "Rhicky",
-      "maxHealth": 12,
-      "currentResource": 100,
-      "buffs": [
-        "battleshout.png"
-      ],
-      "maxResource": 100,
-      "type": "rage",
-      "portrait": "rhicky.png"
-    },
-    {
-      "currentHealth": 12,
-      "level": 1,
-      "clss": "Warrior",
-      "name": "Umontar",
+      "name": "Jack",
       "maxHealth": 12,
       "currentResource": 0,
       "buffs": [
@@ -26,13 +12,27 @@
       ],
       "maxResource": 100,
       "type": "rage",
-      "portrait": "umontar.png"
+      "portrait": "jb.png"
+    },
+    {
+      "currentHealth": 12,
+      "level": 1,
+      "clss": "Priest",
+      "name": "Michael",
+      "maxHealth": 12,
+      "currentResource": 100,
+      "buffs": [
+        "battleshout.png"
+      ],
+      "maxResource": 100,
+      "type": "mana",
+      "portrait": "mp.png"
     },
     {
       "currentHealth": 11,
       "level": 1,
-      "clss": "Hunter",
-      "name": "Corvy",
+      "clss": "Paladin",
+      "name": "Jack",
       "maxHealth": 11,
       "currentResource": 100,
       "buffs": [
@@ -40,13 +40,13 @@
       ],
       "maxResource": 100,
       "type": "mana",
-      "portrait": "corvy.png"
+      "portrait": "jo.png"
     },
     {
       "currentHealth": 8,
-      "level": 2,
-      "clss": "Priest",
-      "name": "Jackdog",
+      "level": 1,
+      "clss": "Mage",
+      "name": "Liam",
       "maxHealth": 8,
       "currentResource": 100,
       "buffs": [
@@ -54,21 +54,35 @@
       ],
       "maxResource": 100,
       "type": "mana",
-      "portrait": "jackdog.png"
+      "portrait": "lim.png"
     },
     {
-      "currentHealth": 6892,
-      "level": 60,
-      "clss": "Warrior",
-      "name": "Alcorsx",
-      "maxHealth": 6892,
+      "currentHealth": 12,
+      "level": 1,
+      "clss": "Hunter",
+      "name": "Luke",
+      "maxHealth": 12,
+      "currentResource": 100,
+      "buffs": [
+        "battleshout.png"
+      ],
+      "maxResource": 100,
+      "type": "mana",
+      "portrait": "lum.png"
+    },
+    {
+      "currentHealth": 100,
+      "level": 1,
+      "clss": "Pet",
+      "name": "Luke's Pet",
+      "maxHealth": 100,
       "currentResource": 100,
       "buffs": [
         "battleshout.png"
       ],
       "maxResource": 100,
       "type": "rage",
-      "portrait": "alcorsx.png"
+      "portrait": "rhicky.png"
     }
   ]
 }
